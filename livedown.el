@@ -34,7 +34,7 @@
 (defun livedown:preview ()
     "Preview the current file in livedown."
       (interactive)
-        (call-process-shell-command
+        (async-shell-command
              (format "livedown start %s --port %s %s &"
                             (shell-quote-argument (buffer-file-name))
                             livedown:port
